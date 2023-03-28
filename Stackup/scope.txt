@@ -1,0 +1,5 @@
+Exploring Filecoin, the IPFS with a focus on;
+- libp2p, 
+- content addressing, 
+- Interplanetary Linked Data (IPLD) and 
+- Distributed Hash Tables (DHTs)
