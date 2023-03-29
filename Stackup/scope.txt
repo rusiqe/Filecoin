@@ -3,3 +3,26 @@ Exploring Filecoin, the IPFS with a focus on;
 - content addressing, 
 - Interplanetary Linked Data (IPLD) and 
 - Distributed Hash Tables (DHTs)
+
+libp2p
+A peer-to-peer (P2P) networking framework that functions as the network layer for IPFS, libp2p has facilitated the creation of P2P applications such as Filecoin. It is made up of a collection of specifications, protocols and libraries to facilitate P2P communication between network participants known as peers.
+
+In contrast to the traditional client-server model, which uses a central server to provide services to numerous client programs on the network, and in which these clients do not communicate with one another but only with the central server, peer-to-peer networks are decentralized, meaning peers communicate with each other directly as equal participants.
+
+For more information about libp2p, you may visit this ProtoSchool tutorial.
+
+Content Addressing and CID
+Content addressing is what IPFS uses to locate files that are stored and hosted on the IPFS network. It is an approach for organizing and locating data in a system where the key used to locate the content is derived from the content itself rather than its location. This key is called the Content Identifier (CID).
+
+CID is a unique address given to every file on the IPFS network that is derived from a combination of the hash of the file content and a unique identifier for the hash algorithm used. Currently, the hashing algorithm that is used by default is SHA-256 which will produce a 256-bit output and that output is encoded in Base58. Base 58 is a binary-to-text encoding scheme that has the advantage of excluding characters that are easily mistaken for one another such as zero and O.
+
+Interplanetary Linked Data (IPLD)
+At its simplest form, the IPLD is a data layer that IPFS is built on top of. It can create a series of links to data but also allows users to create such links themselves using simple data structures that can be stored on the IPFS network. You can think of IPFS as a block store of IPLD such that data sent to the IPFS through the IPLD is kept as linked blocks and Directed Acyclic Graph (DAG), and the user uses IPLD to decode the CIDs so that they are able to access the data. 
+
+When a file is stored on IPFS, that file is broken down into several chunks and stored in different blocks. To rebuild the whole file, a DAG is used to map out where the chunks of content are and how they are connected.
+
+Distributed Hash Tables (DHTs) for Content Routing
+A DHT is a distributed system created to map values to keys. The DHT is a fundamental component of the routing system for content and functions as a mix between a catalogue and a navigation system. It maps the content to the peer who has the matching content that the user is looking for. The DHT is used in IPFS to support the routing and discovery of content and peers on the IPFS network without the need for any centralized coordination.
+
+--------
+Filecoin is a peer-to-peer network that provides decentralized file storage capabilities with built-in economic incentives to ensure that storage providers provide reliable storage services over time. Storage providers are paid by the users to store their files and miners over time verify that the file is stored correctly and has not been corrupted. Filecoin is open to anyone who wants to store their files or get paid as a storage provider. The amount of available storage and its pricing is not controlled by a single entity. Instead, Filecoin encourages open markets for storing and retrieving files that anyone can take part in. 
